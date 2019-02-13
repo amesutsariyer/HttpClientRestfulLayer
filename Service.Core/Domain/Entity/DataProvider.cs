@@ -36,7 +36,7 @@ namespace Service.Core.Domain.Entity
         public string EndService { get; set; }
         public string BeginService { get; set; }
         public bool ErrorOccurred { get; set; }
-        public string ServiceName { get; set; }
+        public string ServiceName { get; set; } 
         public string StatusMessage { get; set; }
 
     }
