@@ -14,10 +14,20 @@ namespace Service.API.Controllers
     {
         private DataProviderService<DataProvider> _dataProviderService;
         string url = string.Empty;
+        //Bu doldurulmalı
+        string SERVERIP = "";
+        //Bu doldurulmalı
+        string USERCODE = "";
+        //Bu doldurulmalı
+        string PASSWORD = "";
+        //Bu doldurulmalı
+        string QUERY = "";
+
         public DataProviderController()
         {
             _dataProviderService = new DataProviderService<DataProvider>();
-            url = "http://localhost:5028/PN/GetData";
+
+            url = $"http://{SERVERIP}/Tobe/app/ApplicationServlet?jsonService=DataProvider&serviceType=DataProvider&usercode={USERCODE}&password={PASSWORD}&method=getData&sqlQuery={QUERY}";
         }
 
         [HttpGet("GetData")]
