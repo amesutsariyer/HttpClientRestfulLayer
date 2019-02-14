@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Service.Core.Domain.Entity
 {
-
     public class Column
     {
         public string Name { get; set; }
@@ -24,6 +24,7 @@ namespace Service.Core.Domain.Entity
 
     public class Dataset
     {
+        [JsonProperty("dataset")]
         public Dataset2 Dataset2 { get; set; }
     }
 
@@ -36,7 +37,7 @@ namespace Service.Core.Domain.Entity
         public string EndService { get; set; }
         public string BeginService { get; set; }
         public bool ErrorOccurred { get; set; }
-        public string ServiceName { get; set; } 
+        public string ServiceName { get; set; }
         public string StatusMessage { get; set; }
 
     }

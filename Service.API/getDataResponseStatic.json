@@ -1,0 +1,219 @@
+{
+  "duration": 116,
+  "operationName": "getData",
+  "dataset": {
+    "Dataset": {
+      "Columns": {
+        "Column": [
+          {
+            "name": "UNITUID",
+            "type": "STRING"
+          },
+          {
+            "name": "CDRID",
+            "type": "STRING"
+          },
+          {
+            "name": "UNIQUEID",
+            "type": "STRING"
+          },
+          {
+            "name": "CALLDATE",
+            "type": "DATE"
+          },
+          {
+            "name": "CLID",
+            "type": "STRING"
+          },
+          {
+            "name": "SRC",
+            "type": "STRING"
+          },
+          {
+            "name": "DST",
+            "type": "STRING"
+          },
+          {
+            "name": "DCONTEXT",
+            "type": "STRING"
+          },
+          {
+            "name": "CHANNEL",
+            "type": "STRING"
+          },
+          {
+            "name": "DSTCHANNEL",
+            "type": "STRING"
+          },
+          {
+            "name": "LASTAPP",
+            "type": "STRING"
+          },
+          {
+            "name": "LASTDATA",
+            "type": "STRING"
+          },
+          {
+            "name": "DURATION",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "BILLSEC",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "DISPOSITION",
+            "type": "STRING"
+          },
+          {
+            "name": "AMAFLAGS",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "ACCOUNTCODE",
+            "type": "STRING"
+          },
+          {
+            "name": "USERFIELD",
+            "type": "STRING"
+          },
+          {
+            "name": "SKILL",
+            "type": "STRING"
+          },
+          {
+            "name": "SKILLEVENT",
+            "type": "STRING"
+          },
+          {
+            "name": "SKILLPARAM1",
+            "type": "STRING"
+          },
+          {
+            "name": "SKILLPARAM2",
+            "type": "STRING"
+          },
+          {
+            "name": "SKILLPARAM3",
+            "type": "STRING"
+          },
+          {
+            "name": "AUDIOFILENAME",
+            "type": "STRING"
+          },
+          {
+            "name": "UID",
+            "type": "STRING"
+          },
+          {
+            "name": "CAMPAIGNID",
+            "type": "STRING"
+          },
+          {
+            "name": "CONTID",
+            "type": "STRING"
+          },
+          {
+            "name": "PBXID",
+            "type": "STRING"
+          },
+          {
+            "name": "MODUID",
+            "type": "STRING"
+          },
+          {
+            "name": "MODDATE",
+            "type": "DATE"
+          },
+          {
+            "name": "LINENUMBER",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "CONFID",
+            "type": "STRING"
+          },
+          {
+            "name": "INTRUNKID",
+            "type": "STRING"
+          },
+          {
+            "name": "INROUTEID",
+            "type": "STRING"
+          },
+          {
+            "name": "CONTEXTID",
+            "type": "STRING"
+          },
+          {
+            "name": "OUTTRUNKID",
+            "type": "STRING"
+          },
+          {
+            "name": "OUTROUTEID",
+            "type": "STRING"
+          },
+          {
+            "name": "OUTPATTERN",
+            "type": "STRING"
+          },
+          {
+            "name": "QLTINTIME",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTOUTTIME",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTBOTHTIME",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTINTOOUT",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTOUTTOIN",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTININTRPT",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTOUTINTRPT",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTINSILENCE",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTOUTSILENCE",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTBOTHSILENCE",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "QLTALLTALKTIME",
+            "type": "DECIMAL"
+          },
+          {
+            "name": "BILLINGID",
+            "type": "STRING"
+          }
+        ]
+      },
+      "Rows": ""
+    }
+  },
+  "errorCode": "NOERROR",
+  "endService": "Fri Oct 19 10:50:12 EET 2018",
+  "beginService": "Fri Oct 19 10:50:12 EET 2018",
+  "errorOccurred": false,
+  "serviceName": "DataProvider",
+  "statusMessage": "NOERROR"
+}

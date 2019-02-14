@@ -11,7 +11,7 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service.Core.Service
+namespace Service.Core.Services
 {
     public class Service<TRequest> : IService<TRequest> where TRequest : class
     {
@@ -21,15 +21,22 @@ namespace Service.Core.Service
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://localhost:55587/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     //GET Method  
-                    HttpResponseMessage response = await client.GetAsync("api/Department/1");
+                    HttpResponseMessage response = await client.GetAsync(endpoint);
                     if (response.IsSuccessStatusCode)
                     {
                         var jsonString = await response.Content.ReadAsStringAsync();
-                        return JsonConvert.DeserializeObject<TRequest>(jsonString);
+                        var result =  JsonConvert.DeserializeObject<TRequest>(jsonString);
+                        return result;
+
+                        //using (StreamReader r = new StreamReader("getDataResponseStatic.json"))
+                        //{
+                        //    string json = r.ReadToEnd();
+                        //    var item = JsonConvert.DeserializeObject<TRequest>(json);
+                        //    return item;
+                        //}
                     }
                     else
                     {
@@ -45,37 +52,19 @@ namespace Service.Core.Service
 
         public void Post(TRequest entity, string endpoint)
         {
-            throw new NotImplementedException();
-        }
-        private void GetPOSTResponse(Uri uri, string data, Action<Response> callback)
-        {
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
-
-            request.Method = "POST";
-            request.ContentType = "text/plain;charset=utf-8";
-
-            System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
-            byte[] bytes = encoding.GetBytes(data);
-
-            request.ContentLength = bytes.Length;
-
-            using (Stream requestStream = request.GetRequestStream())
+            using (var client = new HttpClient())
             {
-                // Send the data.
-                requestStream.Write(bytes, 0, bytes.Length);
-            }
-
-            request.BeginGetResponse((x) =>
-            {
-                using (HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(x))
+                try
                 {
-                    if (callback != null)
-                    {
-                        DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Response));
-                        callback(ser.ReadObject(response.GetResponseStream()) as Response);
-                    }
+                    string postJson = JsonConvert.SerializeObject(entity);
+                    var content = new StringContent(postJson.ToString(), Encoding.UTF8, "application/json");
+                    HttpResponseMessage result = client.PostAsync(new Uri(endpoint), content).Result;
                 }
-            }, null);
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
         }
     }
 }
